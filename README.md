@@ -1,2 +1,3 @@
 # TOP_journey
 my journey to learn programming with The Odin Project
+I will provide all my that I did with (The odin project)[https://www.theodinproject.com/dashboard]. if possiple I will make this a web page describing my experiences during this project. My dreams, frustrations, aha moments... I will try to put everything in it. I will seperate each project in their branches. You can access to any spesific project on it's branch.  
