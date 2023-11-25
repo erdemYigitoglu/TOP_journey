@@ -26,6 +26,18 @@ function operate(num1, operator, num2) {
 	}
 }
 const body = document.querySelector("body");
+const displayDiv = document.createElement("div");
+displayDiv.id = "displaySection";
+const display = document.createElement("input");
+display.readOnly = true;
+displayDiv.appendChild(display);
+const deleteButton = document.createElement("button");
+deleteButton.textContent= "delete";
+displayDiv.appendChild(deleteButton);
+const clearButton = document.createElement("button");
+clearButton.textContent= "clear";
+displayDiv.appendChild(clearButton);
+body.appendChild(displayDiv);
 const numbersDiv = document.createElement("div");
 numbersDiv.id = "numberSection";
 body.appendChild(numbersDiv);
