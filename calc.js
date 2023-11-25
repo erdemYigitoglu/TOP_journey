@@ -57,3 +57,10 @@ for (let i = 0; i <= 9; i ++) {
 	numbersDiv.appendChild(numberButton);
 	numberButton.addEventListener("click", (e) => storeNumber(e))
 }
+function calculate() {
+	operator = e.target.textContent;
+	display.value += e.target.textContent;
+	if (num2 !== "") {
+		operate(Number(num1), operator, Number(num2)); 
+	}
+}
