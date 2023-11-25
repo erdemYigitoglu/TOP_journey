@@ -61,6 +61,7 @@ function calculate() {
 	operator = e.target.textContent;
 	display.value += e.target.textContent;
 	if (num2 !== "") {
-		operate(Number(num1), operator, Number(num2)); 
+		num1 = operate(Number(num1), operator, Number(num2));
+		num2 = "" 
 	}
 }
