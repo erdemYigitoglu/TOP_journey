@@ -37,6 +37,7 @@ displayDiv.appendChild(deleteButton);
 const clearButton = document.createElement("button");
 clearButton.textContent= "clear";
 displayDiv.appendChild(clearButton);
+clearButton.addEventListener("click", () => display.value = "");
 body.appendChild(displayDiv);
 const numbersDiv = document.createElement("div");
 numbersDiv.id = "numberSection";
@@ -45,4 +46,14 @@ for (let i = 0; i <= 9; i ++) {
 	const numberButton = document.createElement("button");
 	numberButton.textContent = i;
 	numbersDiv.appendChild(numberButton);
-};
+	numberButton.addEventListener("click", (e) => {
+		if (num1 === "") {
+			num1 += e.target.textContent;
+			display.value += num1;
+		} else {
+			num2 += e.target.textContent;
+			display.value += num2
+		}
+	}
+	)
+}
