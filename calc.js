@@ -42,6 +42,7 @@ body.appendChild(displayDiv);
 const numbersDiv = document.createElement("div");
 numbersDiv.id = "numberSection";
 body.appendChild(numbersDiv);
+numbersDiv.addEventListener("click", (e) => storeNumber(e))
 function storeNumber(e) {
 	if (num1 === "") {
 		num1 += e.target.textContent;
@@ -55,8 +56,7 @@ for (let i = 0; i <= 9; i ++) {
 	const numberButton = document.createElement("button");
 	numberButton.textContent = i;
 	numbersDiv.appendChild(numberButton);
-	numberButton.addEventListener("click", (e) => storeNumber(e))
-}
+	}
 function calculate(e) {
 	operator = e.target.textContent;
 	display.value += e.target.textContent;
