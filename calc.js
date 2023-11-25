@@ -42,18 +42,18 @@ body.appendChild(displayDiv);
 const numbersDiv = document.createElement("div");
 numbersDiv.id = "numberSection";
 body.appendChild(numbersDiv);
+function storeNumber(e) {
+	if (num1 === "") {
+		num1 += e.target.textContent;
+		display.value += num1;
+	} else {
+		num2 += e.target.textContent;
+		display.value += num2
+	}
+}
 for (let i = 0; i <= 9; i ++) {
 	const numberButton = document.createElement("button");
 	numberButton.textContent = i;
 	numbersDiv.appendChild(numberButton);
-	numberButton.addEventListener("click", (e) => {
-		if (num1 === "") {
-			num1 += e.target.textContent;
-			display.value += num1;
-		} else {
-			num2 += e.target.textContent;
-			display.value += num2
-		}
-	}
-	)
+	numberButton.addEventListener("click", (e) => storeNumber(e))
 }
