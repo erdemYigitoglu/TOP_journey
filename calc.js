@@ -21,6 +21,7 @@ function operate(num1, operator, num2) {
 		return subtract(num1, num2)
 	} else if (operator === "*") {
 		return multiply(num1, num2) 
-	} else if {operator === "/") {
-		num2 !== 0 ? return divide(num1, num2) : return "divition error"
+	} else if (operator === "/") {
+		return num2 !== 0 ? divide(num1, num2) : "divition error"
 	}
+}
