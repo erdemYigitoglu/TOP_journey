@@ -57,7 +57,7 @@ for (let i = 0; i <= 9; i ++) {
 	numbersDiv.appendChild(numberButton);
 	numberButton.addEventListener("click", (e) => storeNumber(e))
 }
-function calculate() {
+function calculate(e) {
 	operator = e.target.textContent;
 	display.value += e.target.textContent;
 	if (num2 !== "") {
@@ -65,3 +65,10 @@ function calculate() {
 		num2 = "" 
 	}
 }
+const operatorsDiv = document.createElement("div");
+operatorsDiv.id = "operatorsDiv";
+const plus = document.createElement("button");
+plus.textContent = "+";
+plus.addEventListener("click", (e) => calculate(e));
+operatorsDiv.appendChild(plus);
+body.appendChild(operatorsDiv);
