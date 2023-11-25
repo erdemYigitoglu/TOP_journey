@@ -25,3 +25,12 @@ function operate(num1, operator, num2) {
 		return num2 !== 0 ? divide(num1, num2) : "divition error"
 	}
 }
+const body = document.querySelector("body");
+const numbersDiv = document.createElement("div");
+numbersDiv.id = "numberSection";
+body.appendChild(numbersDiv);
+for (let i = 0; i <= 9; i ++) {
+	const numberButton = document.createElement("button");
+	numberButton.textContent = i;
+	numbersDiv.appendChild(numberButton);
+};
