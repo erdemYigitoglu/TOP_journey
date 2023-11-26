@@ -50,11 +50,10 @@ numbersDiv.addEventListener("click", (e) => storeNumber(e))
 function storeNumber(e) {
 	if (operator === "") {
 		num1 += e.target.textContent;
-		display.value += num1;
-	} else {
+} else {
 		num2 += e.target.textContent;
-		display.value += num2
-	}
+		}
+		display.value += e.target.textContent;
 }
 for (let i = 0; i <= 9; i ++) {
 	const numberButton = document.createElement("button");
@@ -74,6 +73,7 @@ const operatorsDiv = document.createElement("div");
 operatorsDiv.id = "operatorsDiv";
 operatorsDiv.addEventListener("click", (e) => {
 	if (e.target.textContent === "=") {
+		operate(e);
 		display.value = num1;
 	} else {
 		calculate(e)
