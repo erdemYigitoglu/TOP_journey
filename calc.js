@@ -60,7 +60,7 @@ for (let i = 0; i <= 9; i ++) {
 function calculate(e) {
 	operator = e.target.textContent;
 	display.value += e.target.textContent;
-	if (num1 !== "") & (num2 !== "")) {
+	if ((num1 !== "") & (num2 !== "")) {
 		num1 = operate(Number(num1), operator, Number(num2));
 		num2 = "" 
 	}
@@ -69,12 +69,23 @@ const operatorsDiv = document.createElement("div");
 operatorsDiv.id = "operatorsDiv";
 operatorsDiv.addEventListener("click", (e) => {
 	if (e.target.textContent === "=") {
-		display.value= num1;
+		display.value = num1;
 	} else {
 		calculate(e)
 	}});
 const plus = document.createElement("button");
 plus.textContent = "+";
 operatorsDiv.appendChild(plus);
-
+const minus = document.createElement("button");
+minus.textContent = "-";
+operatorsDiv.appendChild(minus);
+const multiplication = document.createElement("button");
+multiplication.textContent = "*";
+operatorsDiv.appendChild(multiplication);
+const division = document.createElement("button");
+division.textContent = "/";
+operatorsDiv.appendChild(division);
+const equality = document.createAttributeElement("button");
+equality.textContent = "=";
+operatorsDiv.appendChild(equality);
 body.appendChild(operatorsDiv);
