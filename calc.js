@@ -60,7 +60,7 @@ for (let i = 0; i <= 9; i ++) {
 function calculate(e) {
 	operator = e.target.textContent;
 	display.value += e.target.textContent;
-	if (num2 !== "") {
+	if (num1 !== "") & (num2 !== "")) {
 		num1 = operate(Number(num1), operator, Number(num2));
 		num2 = "" 
 	}
