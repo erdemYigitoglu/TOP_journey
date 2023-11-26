@@ -17,12 +17,12 @@ let result = 0;
 function operate(num1, operator, num2) {
 	if (operator === "+") {
 		return add(num1, num2)
-	} else if (operater === "-") {
+	} else if (operator === "-") {
 		return subtract(num1, num2)
 	} else if (operator === "*") {
 		return multiply(num1, num2) 
 	} else if (operator === "/") {
-		return num2 !== 0 ? divide(num1, num2) : "divition error"
+		return num2 !== 0 ? divide(num1, num2) : "division error"
 	}
 }
 const body = document.querySelector("body");
@@ -41,6 +41,7 @@ clearButton.addEventListener("click", () => {
 	display.value = "";
 num1= "";
 num2= ""
+operator = "";
 })
 body.appendChild(displayDiv);
 const numbersDiv = document.createElement("div");
@@ -61,20 +62,22 @@ for (let i = 0; i <= 9; i ++) {
 	numbersDiv.appendChild(numberButton);
 	}
 function calculate(e) {
-	operator = e.target.textContent;
-	display.value += e.target.textContent;
-	if ((num1 !== "") & (num2 !== "")) {
+	if ((num1=== "") || (num2 === "")) {
+		operator = e.target.textContent;
+		display.value += e.target.textContent;
+	} else {
 		num1 = operate(Number(num1), operator, Number(num2));
-		num2 = ""
-		operator = ""; 
-	}
-}
+		num2 ="";
+		display.value += e.target.textContent;
+		operator = e.target.textContent
+	}}
 const operatorsDiv = document.createElement("div");
 operatorsDiv.id = "operatorsDiv";
 operatorsDiv.addEventListener("click", (e) => {
 	if (e.target.textContent === "=") {
-		operate(e);
+		num1 = operate(Number(num1), operator, Number(num2));
 		display.value = num1;
+		num2= "";
 	} else {
 		calculate(e)
 	}});
