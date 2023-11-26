@@ -67,8 +67,14 @@ function calculate(e) {
 }
 const operatorsDiv = document.createElement("div");
 operatorsDiv.id = "operatorsDiv";
+operatorsDiv.addEventListener("click", (e) => {
+	if (e.target.textContent === "=") {
+		display.value= num1;
+	} else {
+		calculate(e)
+	}});
 const plus = document.createElement("button");
 plus.textContent = "+";
-plus.addEventListener("click", (e) => calculate(e));
 operatorsDiv.appendChild(plus);
+
 body.appendChild(operatorsDiv);
