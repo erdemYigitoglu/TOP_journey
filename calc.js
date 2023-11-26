@@ -37,14 +37,18 @@ displayDiv.appendChild(deleteButton);
 const clearButton = document.createElement("button");
 clearButton.textContent= "clear";
 displayDiv.appendChild(clearButton);
-clearButton.addEventListener("click", () => display.value = "");
+clearButton.addEventListener("click", () => {
+	display.value = "";
+num1= "";
+num2= ""
+})
 body.appendChild(displayDiv);
 const numbersDiv = document.createElement("div");
 numbersDiv.id = "numberSection";
 body.appendChild(numbersDiv);
 numbersDiv.addEventListener("click", (e) => storeNumber(e))
 function storeNumber(e) {
-	if (num1 === "") {
+	if (operator === "") {
 		num1 += e.target.textContent;
 		display.value += num1;
 	} else {
@@ -85,7 +89,7 @@ operatorsDiv.appendChild(multiplication);
 const division = document.createElement("button");
 division.textContent = "/";
 operatorsDiv.appendChild(division);
-const equality = document.createAttributeElement("button");
+const equality = document.createElement("button");
 equality.textContent = "=";
 operatorsDiv.appendChild(equality);
 body.appendChild(operatorsDiv);
